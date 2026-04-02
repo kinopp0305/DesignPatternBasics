@@ -9,14 +9,11 @@ package FactoryMethod;
  *
  * @author kinopp
  */
-public abstract class Factory {
-    
+public abstract class Factory { 
     public final Product create(){
         Product product = factoryMethod();
         return product;
     }
-    
     // 何の製品を作るかはサブクラスに任せる
     protected abstract Product factoryMethod();
-
 }

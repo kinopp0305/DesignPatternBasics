@@ -11,5 +11,4 @@ public class ConcreteCommand1 implements Command{
         receiver.action2();
         receiver.action3();
     }
-    
 }

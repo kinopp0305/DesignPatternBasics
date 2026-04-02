@@ -10,10 +10,8 @@ package FactoryMethod;
  * @author kinopp
  */
 public class ConcreteProduct implements Product{
-
     @Override
     public void use() {
         System.out.println("ConcreteProductを使用します");
     }
-    
 }
