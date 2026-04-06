@@ -8,10 +8,6 @@ package Prototype;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/**
- *
- * @author kinopp
- */
 public class ConcretePrototype implements Prototype{
 
     private String initialString = "";
@@ -43,5 +39,4 @@ public class ConcretePrototype implements Prototype{
     public String getSecondString(){
         return secondString;
     }
-    
 }

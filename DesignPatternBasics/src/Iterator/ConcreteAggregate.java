@@ -8,12 +8,7 @@ package Iterator;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- *
- * @author kinopp
- */
 public class ConcreteAggregate implements Aggregate{
-
     private List contents;
     
     public ConcreteAggregate(){

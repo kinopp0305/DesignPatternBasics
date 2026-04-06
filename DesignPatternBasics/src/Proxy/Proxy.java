@@ -10,7 +10,6 @@ package Proxy;
  * @author kinopp
  */
 public class Proxy implements Subject{
-
     private RealSubject realSubject;
     
     @Override

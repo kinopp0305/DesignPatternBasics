@@ -12,5 +12,4 @@ public class ConcreteComponent extends Component{
     public void display() {
         System.out.println(string);
     }
-    
 }

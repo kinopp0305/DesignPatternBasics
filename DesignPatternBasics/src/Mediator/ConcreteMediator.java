@@ -8,10 +8,6 @@ package Mediator;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- *
- * @author kinopp
- */
 public class ConcreteMediator implements Mediator{
 
     private List<Colleague> colleagueList = new ArrayList();

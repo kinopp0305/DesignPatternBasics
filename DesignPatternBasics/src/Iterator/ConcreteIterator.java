@@ -10,7 +10,6 @@ package Iterator;
  * @author kinopp
  */
 public class ConcreteIterator implements Iterator {
-
     private ConcreteAggregate aggregate;
     private int index;
     

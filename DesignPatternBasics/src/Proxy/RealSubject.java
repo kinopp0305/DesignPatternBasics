@@ -10,7 +10,6 @@ package Proxy;
  * @author kinopp
  */
 public class RealSubject implements Subject{
-
     @Override
     public void request1() {
         System.out.println("実際の主体のリクエスト１です");
@@ -25,5 +24,4 @@ public class RealSubject implements Subject{
     public void request3() {
         System.out.println("実際の主体のリクエスト３です");
     }
-    
 }
