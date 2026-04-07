@@ -7,10 +7,6 @@ package Interpreter;
 
 import java.util.Stack;
 
-/**
- *
- * @author kinopp
- */
 public class TerminalExpressionNumber implements Expression{
     private int number;
     

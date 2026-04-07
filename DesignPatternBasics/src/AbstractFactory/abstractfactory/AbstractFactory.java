@@ -1,7 +1,8 @@
 package AbstractFactory.abstractfactory;
 
 public abstract class AbstractFactory {
-   public static AbstractFactory getInstance(String className) throws Exception{   
+
+public static AbstractFactory getInstance(String className) throws Exception{   
        AbstractFactory abstractFactory = null;
        try {
             abstractFactory = (AbstractFactory)Class.forName(className).newInstance();

@@ -9,10 +9,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
 
-/**
- *
- * @author kinopp
- */
 public class Parser {
     private List<Expression> parseTree = new ArrayList<Expression>();
  

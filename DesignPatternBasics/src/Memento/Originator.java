@@ -10,7 +10,6 @@ package Memento;
  * @author kinopp
  */
 public class Originator {
-    
     private String state;
     
     public Memento createMemento(){
@@ -28,5 +27,4 @@ public class Originator {
         this.state = state;
         System.out.println("Originatorに" + state + "が設定されました");
     }
-    
 }

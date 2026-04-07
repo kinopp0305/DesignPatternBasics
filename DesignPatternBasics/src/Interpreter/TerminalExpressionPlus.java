@@ -7,10 +7,6 @@ package Interpreter;
 
 import java.util.Stack;
 
-/**
- *
- * @author kinopp
- */
 public class TerminalExpressionPlus implements Expression {
     @Override
     public void interpret(Stack<Integer> stack) {

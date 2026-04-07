@@ -7,10 +7,6 @@ package Interpreter;
 
 import java.util.Stack;
 
-/**
- *
- * @author kinopp
- */
 public interface Expression {
     public void interpret(Stack<Integer> stack);
 }

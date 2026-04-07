@@ -8,10 +8,6 @@ package Observer;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- *
- * @author kinopp
- */
 public abstract class Subject {
     private List<Observer> observers = new ArrayList<>();
     

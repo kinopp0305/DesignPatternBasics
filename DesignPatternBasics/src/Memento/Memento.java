@@ -5,12 +5,6 @@
  */
 package Memento;
 
-import java.util.Date;
-
-/**
- *
- * @author kinopp
- */
 public class Memento {
     private String state;
     
