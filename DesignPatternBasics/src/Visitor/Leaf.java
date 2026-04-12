@@ -1,9 +1,8 @@
 package Visitor;
 
-public class Leaf extends Component{
-
+public class Leaf extends Component {
     private final String name;
-    
+
     public Leaf(String name) {
         this.name = name;
     }

@@ -1,16 +1,12 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Facade;
 
-/**
- *
- * @author kinopp
- */
-public class ClassA {
-    protected void methodA(){
-        System.out.println("methodAです");
-    }
+//publicを付けず package-private にすることで、
+//このクラス自体を別パッケージから直接使えないようにする
+class ClassA {
+ // クラス自体が非公開なので、メソッドはpublicにしてよい
+ public void methodA() {
+     System.out.println("methodAです");
+ }
 }
+
+

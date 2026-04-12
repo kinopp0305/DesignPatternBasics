@@ -1,34 +1,29 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Iterator;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class ConcreteAggregate implements Aggregate{
-    private List contents;
-    
-    public ConcreteAggregate(){
-        this.contents = new ArrayList();
+public class ConcreteAggregate implements Aggregate<Content> {
+    private final List<Content> contents;
+
+    public ConcreteAggregate() {
+        this.contents = new ArrayList<>();
     }
-    
-    public Content getContentAt(int index){
-        return (Content)contents.get(index);
+
+    public Content getContentAt(int index) {
+        return contents.get(index);
     }
-    
-    public void appendContent(Content content){
+
+    public void appendContent(Content content) {
         this.contents.add(content);
     }
-    
-    public int getLength(){
+
+    public int getLength() {
         return contents.size();
     }
-    
+
     @Override
-    public Iterator iterator() {
+    public Iterator<Content> iterator() {
         return new ConcreteIterator(this);
     }
 }

@@ -2,15 +2,15 @@ package Visitor;
 
 import java.util.Iterator;
 
-public abstract class Component implements Element{
-    //Leafはadd出来ない為、デフォルトは例外とする。Nodeはaddメソッドをオーバーライドする
-    public void add(Component component) throws Exception{
-        throw new Exception();
+public abstract class Component implements Element {
+    // Leafはadd()できないため、デフォルトでは「サポートしていない操作」として例外を投げる
+    public void add(Component component) {
+        throw new UnsupportedOperationException(getName() + "には子要素を追加できません");
     }
-    
-    public Iterator iterator() throws Exception {
-        throw new Exception();
+
+    public Iterator<Component> iterator() {
+        throw new UnsupportedOperationException(getName() + "は子要素を持てません");
     }
-    
+
     public abstract String getName();
 }

@@ -1,6 +1,6 @@
 package Visitor;
 
 public interface Visitor {
-    public void visit(Leaf leaf);
-    public void visit(Composite composite);
+    void visit(Leaf leaf);
+    void visit(Composite composite);
 }

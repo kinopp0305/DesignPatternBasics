@@ -1,6 +1,6 @@
 package ChainOfResponsibility;
 
-public class LevelTwoSolver extends Solver{
+public class LevelTwoSolver extends Solver {
     public LevelTwoSolver(String solverName) {
         super(solverName);
     }
@@ -8,5 +8,5 @@ public class LevelTwoSolver extends Solver{
     @Override
     protected boolean resolve(int problemLevel) {
         return problemLevel <= 2;
-    }  
+    }
 }

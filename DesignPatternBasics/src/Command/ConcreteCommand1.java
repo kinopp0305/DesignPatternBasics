@@ -1,9 +1,13 @@
 package Command;
 
-public class ConcreteCommand1 implements Command{
+public class ConcreteCommand1 implements Command {
+    private final Receiver receiver;
 
-    Receiver receiver = new ConcreteReceiver();
-    
+    // Receiverを外部から受け取ることで、どのReceiverとでも組み合わせられるようにする
+    public ConcreteCommand1(Receiver receiver) {
+        this.receiver = receiver;
+    }
+
     @Override
     public void execute() {
         System.out.println("--- ConcreteCommand1開始 ---");

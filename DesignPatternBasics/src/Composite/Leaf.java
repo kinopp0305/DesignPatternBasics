@@ -1,19 +1,12 @@
 package Composite;
 
-public class Leaf extends Component{
-    private final String name;
-    
+public class Leaf extends Component {
     public Leaf(String name) {
-        this.name = name;
-    }
-
-    @Override
-    public String getName() {
-        return name;
+        super(name);
     }
 
     @Override
     public void printList() {
-        System.out.println(this.getName());
+        System.out.println(getName());
     }
 }

@@ -5,30 +5,31 @@
  */
 package Interpreter;
 
+import java.util.ArrayDeque;
 import java.util.ArrayList;
+import java.util.Deque;
 import java.util.List;
-import java.util.Stack;
 
 public class Parser {
-    private List<Expression> parseTree = new ArrayList<Expression>();
- 
+    private final List<Expression> parseTree = new ArrayList<>();
+
     public Parser(String s) {
         for (String token : s.split(" ")) {
-            if (token.equals("+")){
-                parseTree.add( new TerminalExpressionPlus() );
+            if (token.equals("+")) {
+                parseTree.add(new TerminalExpressionPlus());
             } else if (token.equals("-")) {
-                parseTree.add( new TerminalExpressionMinus() );
+                parseTree.add(new TerminalExpressionMinus());
             } else if (token.equals("*")) {
-                parseTree.add( new TerminalExpressionMultiply() );
+                parseTree.add(new TerminalExpressionMultiply());
             } else {
-                parseTree.add( new TerminalExpressionNumber(Integer.valueOf(token)) );
+                parseTree.add(new TerminalExpressionNumber(Integer.parseInt(token)));
             }
         }
     }
- 
+
     public int evaluate() {
-        Stack<Integer> context = new Stack<Integer>(); 
-        for (Expression e : parseTree){
+        Deque<Integer> context = new ArrayDeque<>();
+        for (Expression e : parseTree) {
             e.interpret(context);
         }
         return context.pop();

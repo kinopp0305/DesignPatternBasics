@@ -1,30 +1,24 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Iterator;
 
-/**
- *
- * @author kinopp
- */
-public class ConcreteIterator implements Iterator {
-    private ConcreteAggregate aggregate;
+public class ConcreteIterator implements Iterator<Content> {
+    private final ConcreteAggregate aggregate;
     private int index;
-    
-    public ConcreteIterator(ConcreteAggregate aggregate){
+
+    public ConcreteIterator(ConcreteAggregate aggregate) {
         this.aggregate = aggregate;
         this.index = 0;
     }
-    
+
     @Override
     public boolean hasNext() {
         return index < aggregate.getLength();
     }
 
     @Override
-    public Object next() {
+    public Content next() {
+        if (!hasNext()) {
+            throw new java.util.NoSuchElementException("次の要素が存在しません");
+        }
         Content content = aggregate.getContentAt(index);
         index++;
         return content;

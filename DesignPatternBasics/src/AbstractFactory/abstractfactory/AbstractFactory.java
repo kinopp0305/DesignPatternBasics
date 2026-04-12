@@ -1,22 +1,31 @@
 package AbstractFactory.abstractfactory;
 
-public abstract class AbstractFactory {
+import java.lang.reflect.InvocationTargetException;
 
-public static AbstractFactory getInstance(String className) throws Exception{   
-       AbstractFactory abstractFactory = null;
-       try {
-            abstractFactory = (AbstractFactory)Class.forName(className).newInstance();
+public abstract class AbstractFactory {
+    public static AbstractFactory getInstance(String className) throws Exception {
+        AbstractFactory abstractFactory = null;
+        try {
+            // Class#newInstance()はJava 9で非推奨になったため、
+            // getDeclaredConstructor().newInstance()を使う
+            abstractFactory = (AbstractFactory) Class.forName(className)
+                    .getDeclaredConstructor()
+                    .newInstance();
         } catch (ClassNotFoundException ex) {
             System.err.println("クラスの指定が正しくありません");
             throw ex;
+        } catch (NoSuchMethodException | InvocationTargetException
+                | InstantiationException | IllegalAccessException ex) {
+            System.err.println("インスタンスの生成に失敗しました");
+            throw ex;
         }
-       return abstractFactory;
+        return abstractFactory;
     }
-   
-    public void makeProduct(){
+
+    public void makeProduct() {
         System.out.println("---- 製品生成開始 ----");
         createAbstractProduct1().makeProduct1();
-        createAbstractProduct2().makeProduct1();
+        createAbstractProduct2().makeProduct2();
         System.out.println("---- 製品生成終了 ----");
     }
 

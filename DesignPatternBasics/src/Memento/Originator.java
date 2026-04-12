@@ -1,30 +1,35 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Memento;
 
-/**
- *
- * @author kinopp
- */
 public class Originator {
     private String state;
-    
-    public Memento createMemento(){
-        Memento memento = new Memento();
-        memento.setState(state);
-        return memento;
-    }
-    
-    public void restoreMemento(Memento memento){
-        this.state = memento.getState();
-        System.out.println("Originatorに" + state + "が再設定されました");
-    }
 
     public void setState(String state) {
         this.state = state;
         System.out.println("Originatorに" + state + "が設定されました");
+    }
+
+    public Object createMemento() {
+        return new Memento(state);
+    }
+
+    public void restoreMemento(Object mementoObject) {
+        Memento memento = (Memento) mementoObject;
+        this.state = memento.getState();
+        System.out.println("Originatorに" + state + "が再設定されました");
+    }
+
+    // privateなインナークラスにすることで、Originatorの外側（Caretakerなど）からは
+    // 中身（getState）どころか、このクラスの存在自体に一切アクセスできなくなる
+    private static class Memento {
+        private final String state;
+
+        private Memento(String state) {
+            this.state = state;
+            System.out.println("Mementoに" + state + "が設定されました");
+        }
+
+        private String getState() {
+            return state;
+        }
     }
 }

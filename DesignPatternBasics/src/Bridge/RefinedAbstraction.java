@@ -1,6 +1,6 @@
 package Bridge;
 
-public class RefinedAbstraction extends Abstraction{
+public class RefinedAbstraction extends Abstraction {
     public RefinedAbstraction(Implementor implementor) {
         super(implementor);
     }
@@ -9,7 +9,6 @@ public class RefinedAbstraction extends Abstraction{
         method1();
         System.out.println("機能メソッドAです");
     }
-
     public void refineMethodB() {
         method2();
         System.out.println("機能メソッドBです");

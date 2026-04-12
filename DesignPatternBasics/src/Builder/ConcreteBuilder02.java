@@ -1,29 +1,25 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Builder;
 
-/**
- *
- * @author kinopp
- */
-public class ConcreteBuilder02 implements Builder{
-    
-    @Override
-    public void buiderPart1() {
-        System.out.println("02のbuilderPart1です");
-    }
+import java.util.ArrayList;
+import java.util.List;
+
+public class ConcreteBuilder02 implements Builder<List<String>> {
+    private final List<String> list = new ArrayList<>();
 
     @Override
-    public void buiderPart2() {
-        System.out.println("02のbuilderPart2です");
+    public void builderPart1(String str) {
+        list.add("01:" + str);
     }
-
     @Override
-    public void buiderPart3() {
-        System.out.println("02のbuilderPart3です");
+    public void builderPart2(String str) {
+        list.add("02:" + str);
     }
-    
+    @Override
+    public void builderPart3(String str) {
+        list.add("03:" + str);
+    }
+    @Override
+    public List<String> getResult() {
+        return list;
+    }
 }

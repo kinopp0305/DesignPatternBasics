@@ -5,17 +5,17 @@
  */
 package Interpreter;
 
-import java.util.Stack;
+import java.util.Deque;
 
-public class TerminalExpressionNumber implements Expression{
-    private int number;
-    
+public class TerminalExpressionNumber implements Expression {
+    private final int number;
+
     public TerminalExpressionNumber(int number) {
         this.number = number;
     }
-    
+
     @Override
-    public void interpret(Stack<Integer> stack)  {
+    public void interpret(Deque<Integer> stack) {
         stack.push(number);
     }
 }

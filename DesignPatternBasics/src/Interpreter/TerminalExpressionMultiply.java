@@ -5,11 +5,11 @@
  */
 package Interpreter;
 
-import java.util.Stack;
+import java.util.Deque;
 
 public class TerminalExpressionMultiply implements Expression {
     @Override
-    public void interpret(Stack<Integer> stack) {
-        stack.push( stack.pop() * stack.pop() ); 
+    public void interpret(Deque<Integer> stack) {
+        stack.push(stack.pop() * stack.pop());
     }
 }

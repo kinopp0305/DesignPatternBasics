@@ -1,6 +1,6 @@
 package State;
 
 public interface State {
-    public void stateMethod1();
-    public void stateMethod2();
+    void stateMethod1(Context context);
+    void stateMethod2(Context context);
 }

@@ -1,6 +1,6 @@
 package ChainOfResponsibility;
 
-public class LevelThreeSolver extends Solver{
+public class LevelThreeSolver extends Solver {
     public LevelThreeSolver(String solverName) {
         super(solverName);
     }
