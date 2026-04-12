@@ -12,25 +12,14 @@ package Builder;
 public class Director {
     private Builder builder;
     
-    public Director(String className) throws Exception{   
-        try {
-            final String fullyQualifiedClassName = Builder.class.getPackage().getName() + "." + className;
-            builder = (Builder)Class.forName(fullyQualifiedClassName).newInstance();
-        } catch (ClassNotFoundException ex) {
-            // 注意：生成対象のクラスは当クラスと同パッケージに存在する必要があります。
-            System.err.println("クラスの指定が正しくありません");
-            throw ex;
-        }
+    public Director(Builder builder) {   
+    	this.builder = builder;
     }
     
-    public void constract(){
-        System.out.println("----- start -----");
-        builder.buiderPart1();
-        for (int i=0; i<5; i++){
-            builder.buiderPart2();
-        }
-        builder.buiderPart3();
-        System.out.println("-----  end  -----");
+    public Object constract(){
+        builder.buiderPart1("X");
+        builder.buiderPart2("Y");
+        builder.buiderPart3("Z");
+        return builder.getResult();
     }
-    
 }

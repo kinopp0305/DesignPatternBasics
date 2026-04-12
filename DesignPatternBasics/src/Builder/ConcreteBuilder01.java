@@ -5,25 +5,33 @@
  */
 package Builder;
 
-/**
- *
- * @author kinopp
- */
 public class ConcreteBuilder01 implements Builder{
-
+    String str;
     @Override
-    public void buiderPart1() {
-        System.out.println("01のbuilderPart1です");
+    public void buiderPart1(String str) {
+    	setString(str);
     }
 
     @Override
-    public void buiderPart2() {
-        System.out.println("01のbuilderPart2です");
+    public void buiderPart2(String str) {
+    	setString(str);
     }
 
     @Override
-    public void buiderPart3() {
-        System.out.println("01のbuilderPart3です");
+    public void buiderPart3(String str) {
+    	setString(str);
     }
-    
+
+	@Override
+	public Object getResult() {
+		return this.str;
+	}
+	
+	private void setString(String str) {
+        if (this.str == null) {
+        	this.str = str + ":";
+        } else {   
+    	    this.str += str + ":";
+        }
+	}
 }

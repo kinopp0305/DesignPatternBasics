@@ -10,7 +10,8 @@ package Builder;
  * @author kinopp
  */
 public interface Builder {
-    public void buiderPart1();
-    public void buiderPart2();
-    public void buiderPart3();
+    public void buiderPart1(String str);
+    public void buiderPart2(String str);
+    public void buiderPart3(String str);
+    public Object getResult();
 }
