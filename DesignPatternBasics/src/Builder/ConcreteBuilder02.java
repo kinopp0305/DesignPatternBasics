@@ -22,4 +22,4 @@ public class ConcreteBuilder02 implements Builder<List<String>> {
     public List<String> getResult() {
         return list;
     }
-}
+} 
